@@ -10,10 +10,17 @@ class InterfaceUsuario:
         result = input(
             "Informe o DDD:")
         return self.destino.obter_destino_pelo_ddd()
-    
+
     def exibir_destino(self):
-        for item in self.destino.lista_destino:
-            return item
+        lista_destinos = self.destino.lista_destino
+        formatText = "{0:<10} {1:<20}\n"
+        destinos = formatText.format("DDD", "destino")
+
+        for item in lista_destinos:
+            destinos += formatText.format(item.DDD, item.destino,)
+
+        return destinos
+
 
     def saida_usuario(self):
         pass
